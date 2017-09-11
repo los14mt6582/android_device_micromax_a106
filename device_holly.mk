@@ -49,8 +49,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
-PRODUCT_PACKAGES += \
-    libgralloc_extra	
 	
 # GSM
 PRODUCT_PACKAGES += libmt6582
@@ -130,10 +128,6 @@ PRODUCT_PACKAGES += \
     libnl_2 \
     libtinyxml
 
-# FM Radio
-PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
 
 # GPS
 PRODUCT_COPY_FILES += \
