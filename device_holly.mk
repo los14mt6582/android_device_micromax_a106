@@ -22,7 +22,9 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
     Torch
 
+# MTK Shims
 PRODUCT_PACKAGES += \
+    libmtk_symbols \
     libxlog
 
 # Lights
