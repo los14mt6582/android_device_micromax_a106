@@ -594,7 +594,7 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
                 p.setDataPosition(dataPosition);
 
                 // Forward responses that we are not overriding to the super class
-                super.processUnsolicited(p);
+                super.processUnsolicited(p, type);
                 return;
         }
 
@@ -654,7 +654,7 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
             // And rewind again in front
             p.setDataPosition(dataPosition);
 
-            super.processUnsolicited(p);
+            super.processUnsolicited(p, type);
         }
     }
 	
@@ -862,20 +862,20 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
     // Override setupDataCall as the MTK RIL needs 8th param CID (hardwired to 1?)
     @Override
     public void
-    setupDataCall(String radioTechnology, String profile, String apn,
-            String user, String password, String authType, String protocol,
+    setupDataCall(int radioTechnology, int profile, String apn,
+            String user, String password, int authType, String protocol,
             Message result) {
-        RILRequest rr
-                = RILRequest.obtain(RIL_REQUEST_SETUP_DATA_CALL, result);
+
+        RILRequest rr = RILRequest.obtain(RIL_REQUEST_SETUP_DATA_CALL, result);
 
         rr.mParcel.writeInt(8);
 
-        rr.mParcel.writeString(radioTechnology);
-        rr.mParcel.writeString(profile);
+        rr.mParcel.writeString(Integer.toString(radioTechnology + 2));
+        rr.mParcel.writeString(Integer.toString(profile));
         rr.mParcel.writeString(apn);
         rr.mParcel.writeString(user);
         rr.mParcel.writeString(password);
-        rr.mParcel.writeString(authType);
+        rr.mParcel.writeString(Integer.toString(authType));
         rr.mParcel.writeString(protocol);
         rr.mParcel.writeString("1");
 
