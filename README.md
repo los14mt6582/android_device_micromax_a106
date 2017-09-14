@@ -8,10 +8,10 @@ CPU     | Quad-core 1.3 GHz Cortex-A7
 GPU     | Mali-400MP2
 Memory  | 1GB RAM
 Shipped Android Version | 4.4.2
-Storage | 8 GB
+Storage | 16 GB
 Battery | 2000 mAh
-Display | 4.7" 480 x 800 px
-Camera  | 8MPx, LED Flash
+Display | 5.0" 720 x 1280 px
+Camera  | 8 MP, f/2.0, autofocus, LED flash
 
 
 
@@ -26,8 +26,8 @@ This branch is for building LineageOS 14.1 ROMs.
 - [ ] Video recording
 - [ ] Camera
 - [ ] SMS (sending & recieving)
-- [ ] All sensors
-- [ ] Offline charging
+- [x] All sensors
+- [x] Offline charging
 - [ ] 2G/3G switch
 - [ ] Data connection
 - [ ] VPN
