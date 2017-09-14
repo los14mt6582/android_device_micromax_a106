@@ -856,18 +856,17 @@ service ami304d /system/bin/ami304d
     user system
     group system
     disabled
-    oneshot
+    class main
 
 service memsicd /system/bin/memsicd
-    disabled
-    oneshot
+     disabled
     user system
     group system
     class main
 
 service memsicd3416x /system/bin/memsicd3416x
-    disabled
-    user system
+     disabled
+	 user system
     group system
     class main
     oneshot
@@ -876,53 +875,62 @@ service akmd8975 /system/bin/akmd8975
     disabled
     user system
     group system
+    class main
 
 service akmd8963 /system/bin/akmd8963
-    disabled
+#    disabled
     user system
     group system
+    class main
 
 service akmd09911 /system/bin/akmd09911
     disabled
     user system
     group system
+    class main
 
 service bmm050d /system/bin/bmm050d
     disabled
     user system
     group system
+    class main
 
 service mc6420d /system/bin/mc6420d
     disabled
     user system
     group system
     class main
-
+    
 service qmc5983d /system/bin/qmc5983d
-    disabled
-    user system
+     disabled
+	 user system
     group system
     class main
+
+service qmc6983d /system/bin/qmc6983d
+    disabled
+    class main   
+    user system
+    group system
+    oneshot
 
 service orientationd /system/bin/orientationd
     disabled
     user system
     group system input
+    class main
+
+service AcdApiDaemon /system/bin/AcdApiDaemon
+    disabled
+    user system
+    group system
+    class main
 
 service geomagneticd /system/bin/geomagneticd
     disabled
     user system
     group system input
-service bmc156d /system/bin/bmc156d
-    disabled
     class main
-    user system
-    group system input
-service lsm303md /system/bin/lsm303md
-    disabled
-    class main
-    user system
-    group system input
 #
 #sensor service (end)
 #
