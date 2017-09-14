@@ -58,6 +58,6 @@ ro.zygote.preload.enable=0
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 
-persist.sys.timezone=Europe/Moscow
+persist.sys.timezone=Asia/Kolkata
 persist.sys.strictmode.visual=0
 persist.sys.strictmode.disable=1
