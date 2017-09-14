@@ -46,7 +46,7 @@ This branch is for building LineageOS 14.1 ROMs.
 # Credits/Thanks to:-
   * Fire855 - withou him, we are nothing
   * adi766 - brought up N on MT6572
-  * gmcadiom - botted first N on Mt6582
+  * gmcadiom - booted first N on Mt6582
   * DarkKnight6499 - for base device tree and vendor tree
   * kishpatel1998 - for making a new working device tree for MT6582
   * manjotsidhu - for making developement ongoing adn fixing RIL
