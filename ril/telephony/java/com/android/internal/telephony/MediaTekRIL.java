@@ -362,9 +362,8 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
     }
 
     // all that C&P just for responseOperator overriding?
-    @Override
     protected RILRequest
-    processSolicited (Parcel p, int type) {
+    processSolicited (Parcel p) {
         int serial, error;
         boolean found = false;
 
@@ -551,7 +550,6 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
         return rr;
     }
 
-    @Override
     protected void
     processUnsolicited (Parcel p, int type) {
         Object ret;
