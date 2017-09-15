@@ -44,6 +44,7 @@ This branch is for building LineageOS 14.1 ROMs.
   * Done :)
   
 # Credits/Thanks to:-
+  * GOD For Everything and Anything
   * Fire855 - withou him, we are nothing
   * adi766 - brought up N on MT6572
   * gmcadiom - booted first N on Mt6582
@@ -54,7 +55,3 @@ This branch is for building LineageOS 14.1 ROMs.
   * Ur name will be listed here :) :) :) :)
   * Electricity Department - for a frequent power cut
   * Everybody's Internet Provider - for a good very low speed
-
-# Sorry guys for not listing ur name here - for applying plz contact - badboyarbaz, EndLess728, manjotsidhu, rcrajarshi12
-
-# Happy Kanging - we can determine which is our ROM 
