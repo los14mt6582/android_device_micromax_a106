@@ -193,8 +193,6 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
     static final int RIL_UNSOL_CNAP = (RIL_UNSOL_MTK_BASE + 30);
     static final int RIL_UNSOL_STK_EVDL_CALL = (RIL_UNSOL_MTK_BASE + 31);
 
-    private boolean setPreferredNetworkTypeSeen = false;
-
     // TODO: Support multiSIM
     // Sim IDs are 0 / 1
     int mSimId = 0;
@@ -362,8 +360,9 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
     }
 
     // all that C&P just for responseOperator overriding?
+    @Override
     protected RILRequest
-    processSolicited (Parcel p) {
+    processSolicited (Parcel p, int type) {
         int serial, error;
         boolean found = false;
 
@@ -410,20 +409,11 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_GET_IMSI: ret =  responseString(p); break;
             case RIL_REQUEST_HANGUP: ret =  responseVoid(p); break;
             case RIL_REQUEST_HANGUP_WAITING_OR_BACKGROUND: ret =  responseVoid(p); break;
-            case RIL_REQUEST_HANGUP_FOREGROUND_RESUME_BACKGROUND: {
-                if (mTestingEmergencyCall.getAndSet(false)) {
-                    if (mEmergencyCallbackModeRegistrant != null) {
-                        riljLog("testing emergency call, notify ECM Registrants");
-                        mEmergencyCallbackModeRegistrant.notifyRegistrant();
-                    }
-                }
-                ret =  responseVoid(p);
-                break;
-            }
+            case RIL_REQUEST_HANGUP_FOREGROUND_RESUME_BACKGROUND: ret =  responseVoid(p); break;
             case RIL_REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE: ret =  responseVoid(p); break;
             case RIL_REQUEST_CONFERENCE: ret =  responseVoid(p); break;
             case RIL_REQUEST_UDUB: ret =  responseVoid(p); break;
-            case RIL_REQUEST_LAST_CALL_FAIL_CAUSE: ret =  responseFailCause(p); break;
+            case RIL_REQUEST_LAST_CALL_FAIL_CAUSE: ret =  responseInts(p); break;
             case RIL_REQUEST_SIGNAL_STRENGTH: ret =  responseSignalStrength(p); break;
             case RIL_REQUEST_VOICE_REGISTRATION_STATE: ret =  responseStrings(p); break;
             case RIL_REQUEST_DATA_REGISTRATION_STATE: ret =  responseStrings(p); break;
@@ -550,6 +540,7 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
         return rr;
     }
 
+    @Override
     protected void
     processUnsolicited (Parcel p, int type) {
         Object ret;
@@ -673,7 +664,7 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
             case RIL_REQUEST_ENTER_SIM_PUK2: return "ENTER_SIM_PUK2";
             case RIL_REQUEST_CHANGE_SIM_PIN: return "CHANGE_SIM_PIN";
             case RIL_REQUEST_CHANGE_SIM_PIN2: return "CHANGE_SIM_PIN2";
-            case RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION: return "ENTER_NETWORK_DEPERSONALIZATION";
+            case RIL_REQUEST_ENTER_NETWORK_DEPERSONALIZATION: return "ENTER_DEPERSONALIZATION_CODE";
             case RIL_REQUEST_GET_CURRENT_CALLS: return "GET_CURRENT_CALLS";
             case RIL_REQUEST_DIAL: return "DIAL";
             case RIL_REQUEST_GET_IMSI: return "GET_IMSI";
@@ -1207,24 +1198,6 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
 	}
     }
 
-    protected Object
-    responseFailCause(Parcel p) {
-        int numInts;
-        int response[];
-
-        numInts = p.readInt();
-        response = new int[numInts];
-        for (int i = 0 ; i < numInts ; i++) {
-            response[i] = p.readInt();
-        }
-        LastCallFailCause failCause = new LastCallFailCause();
-        failCause.causeCode = response[0];
-        if (p.dataAvail() > 0) {
-          failCause.vendorCause = p.readString();
-        }
-        return failCause;
-    }
-
     public void setDataAllowed(boolean allowed, Message result) {
         handle3GSwitch();
 
@@ -1236,18 +1209,4 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
         rr.mParcel.writeInt(allowed ? 1 : 0);
         send(rr);
     }
-
-    @Override
-    public void setPreferredNetworkType(int networkType , Message response) {
-        riljLog("setPreferredNetworkType: " + networkType);
-
-        if (!setPreferredNetworkTypeSeen) {
-            riljLog("Need to reboot modem!");
-            setRadioPower(false, null);
-            setPreferredNetworkTypeSeen = true;
-        }
-
-        super.setPreferredNetworkType(networkType, response);
-    }
-
 }
