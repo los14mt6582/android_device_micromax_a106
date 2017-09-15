@@ -53,8 +53,6 @@ PRODUCT_PACKAGES += \
 
 	
 # GSM
-PRODUCT_PACKAGES += libmt6582
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=MediaTekRIL
 
