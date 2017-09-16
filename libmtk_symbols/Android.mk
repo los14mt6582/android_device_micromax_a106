@@ -20,7 +20,8 @@ LOCAL_SRC_FILES := \
     mtk_ril.cpp \
     icu55.c
 
-LOCAL_SHARED_LIBRARIES := libbinder liblog libicuuc libui
+LOCAL_SHARED_LIBRARIES := libbinder liblog libicuuc libui \
+                          libstagefright
 LOCAL_MODULE := libmtk_symbols
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 
