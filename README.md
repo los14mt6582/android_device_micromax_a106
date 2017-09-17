@@ -21,10 +21,10 @@ This branch is for building LineageOS 14.1 ROMs.
 - [ ] FM Radio
 - [ ] Calls
 - [ ] USSD code
-- [ ] WiFi
-- [ ] Bluetooth
+- [x] WiFi
+- [x] Bluetooth
 - [ ] Video recording
-- [ ] Camera
+- [x] Camera
 - [ ] SMS (sending & recieving)
 - [x] All sensors
 - [x] Offline charging
