@@ -193,6 +193,7 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
     static final int RIL_UNSOL_CNAP = (RIL_UNSOL_MTK_BASE + 30);
     static final int RIL_UNSOL_STK_EVDL_CALL = (RIL_UNSOL_MTK_BASE + 31);
 
+    private boolean setPreferredNetworkTypeSeen = false;
 
     // TODO: Support multiSIM
     // Sim IDs are 0 / 1
@@ -1238,7 +1239,17 @@ public class MediaTekRIL extends RIL implements CommandsInterface {
         send(rr);
     }
 
+    @Override
+    public void setPreferredNetworkType(int networkType , Message response) {
+        riljLog("setPreferredNetworkType: " + networkType);
 
+        if (!setPreferredNetworkTypeSeen) {
+            riljLog("Need to reboot modem!");
+            setRadioPower(false, null);
+            setPreferredNetworkTypeSeen = true;
+        }
 
+        super.setPreferredNetworkType(networkType, response);
+    }
 
 }
