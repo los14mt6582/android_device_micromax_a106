@@ -21,10 +21,10 @@ This branch is for building LineageOS 14.1 ROMs.
 - [ ] FM Radio
 - [ ] Calls
 - [ ] USSD code
-- [ ] WiFi
-- [ ] Bluetooth
+- [x] WiFi
+- [x] Bluetooth
 - [ ] Video recording
-- [ ] Camera
+- [x] Camera
 - [ ] SMS (sending & recieving)
 - [x] All sensors
 - [x] Offline charging
@@ -55,3 +55,4 @@ This branch is for building LineageOS 14.1 ROMs.
   * Ur name will be listed here :) :) :) :)
   * Electricity Department - for a frequent power cut
   * Everybody's Internet Provider - for a good very low speed
+  * rcrajarshi12 - for damadging the good working device tree
