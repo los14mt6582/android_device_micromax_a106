@@ -37,7 +37,7 @@ This branch is for building LineageOS 14.1 ROMs.
 
   * repo init -u git://github.com/los14mt6582/android.git -b cm-14.1
   * repo sync
-  * git clone https://github.com/los14mt6582/device_huawei_holly.git device/huawei/holly
+  * git clone https://github.com/los14mt6582/android_device_huawei_holly.git device/huawei/holly
   * git clone https://github.com/los14mt6582/vendor_huawei_holly.git vendor/huawei/holly
   * source build/envsetup.sh
   * brunch holly
