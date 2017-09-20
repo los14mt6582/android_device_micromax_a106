@@ -56,8 +56,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += libmt6582
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=MT6735 \
-    ro.telephony.ril.config=fakeiccid
+    ro.telephony.ril_class=MediaTekRIL
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
