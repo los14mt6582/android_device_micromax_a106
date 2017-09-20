@@ -45,19 +45,14 @@ PRODUCT_PACKAGES += \
     lib_driver_cmd_mt66xx
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
+    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
     
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor
 
-	
-# GSM
-PRODUCT_PACKAGES += libmt6582
-
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=MT6735 \
-    ro.telephony.ril.config=fakeiccid
+    ro.telephony.ril_class=MediaTekRIL
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
@@ -68,10 +63,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/factory_init.rc:root/factory_init.rc \
     $(LOCAL_PATH)/rootdir/fstab.mt6582:root/fstab.mt6582 \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6582.rc:root/init.mt6582.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6582_common.rc:root/init.mt6582_common.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6582.usb.rc:root/init.mt6582.usb.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.mt6582.rc:root/ueventd.mt6582.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6572.rc:root/init.mt6572.rc \
+    $(LOCAL_PATH)/rootdir/init.mt6572.usb.rc:root/init.mt6572.usb.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.mt6572.rc:root/ueventd.mt6572.rc \
     $(LOCAL_PATH)/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab \
     $(LOCAL_KERNEL):kernel
 
