@@ -40,13 +40,21 @@ public class Operators {
         HashMap<String, String> init = new HashMap<String, String>();
         // Taken from spnOveride.java
         FileReader spnReader;
+<<<<<<< HEAD
         final File spnFile = new File(Environment.getRootDirectory(), "etc/spn-conf.xml");
+=======
+        final File spnFile = new File(Environment.getRootDirectory(), "etc/selective-spn-conf.xml");
+>>>>>>> 279c0f5a1039a3c12fb90e2ad2bf13db24e02241
 
         try {
             spnReader = new FileReader(spnFile);
         } catch (FileNotFoundException e) {
             Rlog.w("Operatorcheck", "Can not open " +
+<<<<<<< HEAD
                    Environment.getRootDirectory() + "/etc/spn-conf.xml");
+=======
+                   Environment.getRootDirectory() + "/etc/selective-spn-conf.xml");
+>>>>>>> 279c0f5a1039a3c12fb90e2ad2bf13db24e02241
             return init;
         }
 
