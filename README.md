@@ -19,7 +19,7 @@ This branch is for building LineageOS 14.1 ROMs.
 
 ## What's working
 - [ ] FM Radio
-- [ ] Calls
+- [X] Calls
 - [ ] USSD code
 - [x] WiFi
 - [x] Bluetooth
