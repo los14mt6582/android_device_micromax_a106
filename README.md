@@ -57,3 +57,5 @@ This branch is for building LineageOS 14.1 ROMs.
   * Electricity Department - for a frequent power cut
   * Everybody's Internet Provider - for a good very low speed
   * rcrajarshi12 - for damadging the good working device tree
+  * Anand.Umap - for his awesome Mic Fix
+  * Google - For everthing (you must apprecieate) and The Awesome Free VPS
