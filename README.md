@@ -20,16 +20,16 @@ This branch is for building LineageOS 14.1 ROMs.
 ## What's working
 - [ ] FM Radio
 - [X] Calls
-- [ ] USSD code
+- [X] USSD code
 - [x] WiFi
 - [x] Bluetooth
 - [ ] Video recording
 - [x] Camera
-- [ ] SMS (sending & recieving)
+- [X] SMS (sending & recieving)
 - [x] All sensors
 - [x] Offline charging
-- [ ] 2G/3G switch
-- [ ] Data connection
+- [X] 2G/3G switch
+- [X] Data connection
 - [ ] VPN
 
 
