@@ -3,9 +3,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/huawei/holly/holly-vendor.mk)
+$(call inherit-product-if-exists, vendor/micromax/a106/a106-vendor.mk)
 
-LOCAL_PATH := device/huawei/holly
+LOCAL_PATH := device/micromax/a106
 
 PRODUCT_CHARACTERISTICS := default
 
@@ -159,19 +159,19 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.media.use-awesome=true
 
-PRODUCT_NAME := full_holly
-PRODUCT_DEVICE := holly
+PRODUCT_NAME := full_a106
+PRODUCT_DEVICE := a106
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 480
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
