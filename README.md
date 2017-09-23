@@ -46,6 +46,7 @@ This branch is for building LineageOS 14.1 ROMs.
 # Credits/Thanks to:-
   * GOD For Everything and Anything
   * Fire855 - withou him, we are nothing
+  * Tribetmen - N Pacthes For MT6572 (He is the man Behind LOS14.1 to boot On 3.4.67 Kernel)
   * adi766 - brought up N on MT6572
   * gmcadiom - booted first N on Mt6582
   * DarkKnight6499 - for base device tree and vendor tree
