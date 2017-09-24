@@ -36,7 +36,7 @@ This branch is for building LineageOS 14.1 Based ROMs.
   * repo init -u git://github.com/los14mt6582/android.git -b cm-14.1
   * repo sync
   * git clone https://github.com/los14mt6582/android_device_micromax_a106.git device/micromax/a106
-  * git clone https://github.com/los14mt6582/vendor_micromax_a106.git vendor/micromax/a106
+  * git clone https://github.com/los14mt6582/android_vendor_micromax_a106.git vendor/micromax/a106
   * source build/envsetup.sh
   * brunch a106
   * Done :)
