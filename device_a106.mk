@@ -51,8 +51,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbt-vendor
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=MediaTekRIL
+# MTK RIL
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril_class=MediaTekRIL \
+    ro.telephony.ril.config=fakeiccid
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
